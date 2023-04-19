@@ -32,6 +32,7 @@ ALLOWED_HOSTS = []
 
 SITE_APPS = [
     'core',
+    'task',
 ]
 
 INSTALLED_APPS = [
