@@ -18,7 +18,8 @@ from django.contrib import admin
 from django.urls import path, include
 
 api_urls = [
-    path('core/', include('core.api.urls', namespace='api_core'))
+    path('core/', include('core.api.urls', namespace='api_core')),
+    path('tasks/', include('task.api.urls', namespace='api_task')),
 ]
 
 urlpatterns = [

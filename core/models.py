@@ -50,12 +50,21 @@ class User(AbstractUser):
         verbose_name='Роль',
         default=UserRoleEnum.STUDENT.value,
     )
+    middle_name = models.CharField(max_length=254, blank=True, verbose_name='Отчество')
 
     def is_student(self):
         return self.role == UserRoleEnum.STUDENT.value
 
     def is_teacher(self):
         return self.role == UserRoleEnum.TEACHER.value
+
+    @property
+    def simple_name(self):
+        return ' '.join([self.last_name, self.first_name]).strip()
+
+    @property
+    def full_name(self):
+        return ' '.join([self.last_name, self.first_name, self.middle_name]).strip()
 
 
 class Project(models.Model):

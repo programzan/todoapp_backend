@@ -28,7 +28,7 @@ class AssignedTask(DefaultDateFieldsAbstractClass):
         User,
         verbose_name='Исполнитель',
         on_delete=models.CASCADE,
-        related_name='assigned_tasks',
+        related_name='related_user_tasks',
     )
     completed = models.BooleanField(default=False)
 
